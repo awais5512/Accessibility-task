@@ -5,7 +5,7 @@
 }
 
 :root {
-  --primary-green: #009c06;
+  --primary-green: rgba(53, 165, 13, 0.99);
   --primary-black: #000;
   --primary-white: #fff;
   --primary-blue: #0759d5;
@@ -113,7 +113,7 @@ textarea {
 .btn.btn-secondary:hover,
 .btn.btn-secondary:focus,
 .btn.btn-secondary:focus-visible {
-  background-color: #18941c;
+  background-color: rgba(82, 236, 27, 0.99);
 }
 
 .hero_wrapper {
@@ -254,7 +254,7 @@ textarea {
 
 .accordion_trigger:focus {
   outline: 4px solid transparent;
-  border: 2px solid red;
+  border: 2px solid rgb(170, 255, 0);
 }
 
 .accordion>*:first-child .accordion_trigger,
