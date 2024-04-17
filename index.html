@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="An app to predict the score of a football match.">
+  <meta name="keywords" content="football, score, prediction, champions league">
+  <title>Football App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <main>
+    <header class="navbar_wrapper">
+      <div class="container">
+        <div class="navbar_content">
+          <h1>Football.</h1>
+          <nav>
+            <a href="#match_highlights" class="btn btn-primary">Match Highlights</a>
+            <button class="btn btn-secondary" id="toggle-high-contrast">
+              Enable High Contrast
+            </button>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <section class="hero_wrapper">
+      <div class="container container-md hero_content">
+        <article>
+          <h2 class="title">The Beautiful Game: All About Football</h2>
+          <p class="description">
+            Football is the only sport in which the ball is kicked by the foot rather than the arm.
+            You can also call it the ball of the foot.
+          </p>
+          <div class="btns_wrapper">
+            <a href="#football_cards" aria-label="Football cards button" class="btn btn-primary">Football Cards</a>
+            <a href="#prediction" aria-label="Predict Score button" class="btn btn-secondary">Predict Score</a>
+          </div>
+        </article>
+        <img class="hero_img"
+          src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjN8fGZvb3RiYWxsfGVufDB8fDB8fHww"
+          alt="Green football ground with football and player's shoes">
+      </div>
+    </section>
+    <section id="football_cards" class="football_cards_wrapper">
+      <div class="container container-md">
+        <h2 class="section_title">Football Cards</h2>
+        <div class="football_cards">
+          <div class="football_card yellow">
+            <p class="card_text">Yellow Card</p>
+          </div>
+          <div class="football_card red">
+            <p class="card_text">Red Card</p>
+          </div>
+          <div class="football_card blue">
+            <p class="card_text">Blue Card</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="match_highlights" class="match_highlights_wrapper">
+      <div class="container container-md">
+        <h2 class="section_title">Match Highlights</h2>
+        <div id="accordionGroup" class="accordion">
+          <h3 class="accordion_title_wrapper">
+            <button
+              type="button"
+              aria-expanded="true"
+              class="accordion_trigger"
+              aria-controls="sect1"
+              id="accordion1id">
+              <span class="accordion_title">
+                PSG vs Barcelona
+                <span class="accordion-icon"></span>
+              </span>
+            </button>
+          </h3>
+          <div id="sect1" role="region" aria-labelledby="accordion1id" class="accordion_panel">
+            <p>Barcelona Lost 1-4</p>
+          </div>
+          <h3 class="accordion_title_wrapper">
+            <button
+              type="button"
+              aria-expanded="false"
+              class="accordion_trigger"
+              aria-controls="sect2"
+              id="accordion2id">
+              <span class="accordion_title">
+                Dortmund vs Atletico
+                <span class="accordion-icon"></span>
+              </span>
+            </button>
+          </h3>
+          <div id="sect2" role="region" aria-labelledby="accordion2id" class="accordion_panel" hidden="">
+            <p>Dortmund Won 5-4</p>
+          </div>
+          <h3 class="accordion_title_wrapper">
+            <button
+              type="button"
+              aria-expanded="false"
+              class="accordion_trigger"
+              aria-controls="sect3"
+              id="accordion3id">
+              <span class="accordion_title">
+                Bayern Vs Arsenal
+                <span class="accordion-icon"></span>
+              </span>
+            </button>
+          </h3>
+          <div id="sect3" role="region" aria-labelledby="accordion3id" class="accordion_panel" hidden="">
+            <p>Bayern Wins 10-2</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="prediction_wrapper" id="prediction">
+      <div class="container container-sm">
+        <h2 style="padding-bottom: 1rem;">Match Prediction</h2>
+        <form id="predictionForm" class="prediction_form" onsubmit="handlePredictionFormSubmit(event)">
+          <label for="fullname" class="prediction_label">Name:</label>
+          <input
+            type="text"
+            id="fullname"
+            name="fullname"
+            class="prediction_input"
+            aria-required="true"
+            aria-invalid="false"
+            required>
+          <br><br>
+          <label for="score" class="prediction_label">Predicted Score:</label>
+          <input
+            type="text"
+            id="score"
+            name="score"
+            class="prediction_input"
+            aria-required="true"
+            aria-invalid="false"
+            aria-describedby="scoreFieldError"
+            required>
+          <span id="scoreFieldError" style="display:none;" role="alert"></span>
+          <br><br>
+          <button class="btn btn-secondary" id="submitPredictionButton">Submit Prediction</button>
+        </form>
+      </div>
+    </section>
+    <div class="alertMessage container container-md" role="alert" id="alertContainer"></div>
+    <footer aria-label="Copyright info">
+      <h4>Copyright & trademarks &copy; 2024</h4>
+    </footer>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
